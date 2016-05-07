@@ -50,13 +50,7 @@ class Product extends BaseModel
      *
      * @var array
      */
-    public $fillable = [
-        'client_id',
-		'tenant_id',
-		'name',
-		'price',
-		'recurring'
-    ];
+    
 
     /**
      * The attributes that should be casted to native types.

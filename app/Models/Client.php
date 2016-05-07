@@ -43,9 +43,6 @@ class Client extends Model
      *
      * @var array
      */
-    public $fillable = [
-        'name'
-    ];
 
     /**
      * The attributes that should be casted to native types.

@@ -29,7 +29,7 @@ class ProductController extends BaseController
     {
         $products = $this->productService->paginate(10);
 
-        return view('products.index')->with(compact('products'));
+        return view('pages.products.index')->with(compact('products'));
     }
 
     /**

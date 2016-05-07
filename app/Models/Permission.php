@@ -49,12 +49,7 @@ class Permission extends BaseModel
      *
      * @var array
      */
-    public $fillable = [
-        'client_id',
-		'tenant_id',
-		'name',
-		'slug'
-    ];
+    
 
     /**
      * The attributes that should be casted to native types.

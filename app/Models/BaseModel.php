@@ -19,16 +19,6 @@ class BaseModel extends Model
     
     protected $guarded = ['id'];
     
-    protected $hidden = [
-        'created_by',
-        'updated_by',
-        'deleted_by',
-        'deleted_at',
-        'created_at',
-        'updated_at',
-        'tenant_id'
-    ];
-
     public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by');

@@ -53,13 +53,7 @@ class User extends BaseModel
      *
      * @var array
      */
-    public $fillable = [
-        'client_id',
-		'tenant_id',
-		'email',
-		'password'
-    ];
-
+    
     /**
      * The attributes that should be casted to native types.
      *

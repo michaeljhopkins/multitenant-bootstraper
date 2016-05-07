@@ -47,11 +47,6 @@ class Tenant extends Model
      *
      * @var array
      */
-    public $fillable = [
-        'client_id',
-		'name',
-		'url'
-    ];
 
     /**
      * The attributes that should be casted to native types.

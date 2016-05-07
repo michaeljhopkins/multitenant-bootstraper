@@ -49,13 +49,6 @@ class Order extends BaseModel
      *
      * @var array
      */
-    public $fillable = [
-        'client_id',
-		'tenant_id',
-		'total',
-		'user_id'
-    ];
-
     /**
      * The attributes that should be casted to native types.
      *

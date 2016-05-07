@@ -223,7 +223,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'BsForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
-        'Landlord'   => HipsterJazzbo\Landlord\Facades\Landlord::class,
+        'Landlord' => HipsterJazzbo\Landlord\Facades\LandlordFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
 
     ],

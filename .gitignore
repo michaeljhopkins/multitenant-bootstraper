@@ -1,0 +1,13 @@
+# --- some additional files that don't need to eventually end up in prod. Generate them locally
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+
+storage/
+/vendor
+node_modules
+.idea
+._.*
+.env
+
+/**/.DS_Store

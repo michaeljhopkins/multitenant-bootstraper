@@ -1,4 +1,5 @@
 <?php namespace Multistarter\Models;
+use HipsterJazzbo\Landlord\BelongsToTenant;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -34,8 +35,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Tenant extends Model
 {
-    
-    /**
+	use BelongsToTenant;
+
+
+	/**
      * The database table used by the model.
      *
      * @var string

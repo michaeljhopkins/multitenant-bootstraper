@@ -16,6 +16,15 @@ use Illuminate\Database\Eloquent\Model;
 class BaseModel extends Model
 {
     use BelongsToTenant;
+
+    protected $hidden = [
+        'created_by',
+        'updated_by',
+        'deleted_by',
+        'deleted_at',
+        'created_at',
+        'updated_at',
+    ];
     
     protected $guarded = ['id'];
     

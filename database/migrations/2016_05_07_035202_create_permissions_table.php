@@ -20,10 +20,10 @@ class CreatePermissionsTable extends Migration
 			$table->string('name');
 			$table->string('slug')->unique('slug');
             $table->timestamps();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->softDeletes();
-            $table->unsignedInteger('deleted_by');
+            $table->unsignedInteger('deleted_by')->nullable();
         });
     }
 

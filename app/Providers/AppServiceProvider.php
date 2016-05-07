@@ -23,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Landlord::addTenant($tenantColumn, $tenantId)
     }
 }

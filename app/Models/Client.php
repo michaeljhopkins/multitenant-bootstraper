@@ -1,6 +1,5 @@
 <?php namespace Multistarter\Models;
-
- as Model;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Multistarter\Models\Client

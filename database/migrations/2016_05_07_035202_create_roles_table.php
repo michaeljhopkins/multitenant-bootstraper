@@ -20,10 +20,10 @@ class CreateRolesTable extends Migration
 			$table->string('name');
 			$table->string('slug')->unique('slug');
             $table->timestamps();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->softDeletes();
-            $table->unsignedInteger('deleted_by');
+            $table->unsignedInteger('deleted_by')->nullable();
         });
         Schema::create('permission_role',function(Blueprint $table){
             $table->increments('id');
@@ -50,9 +50,7 @@ class CreateRolesTable extends Migration
     public function down()
     {
         Schema::drop('roles');
-        Schema::drop('permission_role');
-        Schema::drop('permission_user');
-        Schema::drop('role_user');
+        
     }
 
 }

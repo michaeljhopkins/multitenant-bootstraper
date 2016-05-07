@@ -21,10 +21,10 @@ class CreateProductsTable extends Migration
 			$table->decimal('price', 10, 0)->nullable();
 			$table->integer('recurring')->nullable();
             $table->timestamps();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->softDeletes();
-            $table->unsignedInteger('deleted_by');
+            $table->unsignedInteger('deleted_by')->nullable();
         });
         
         Schema::create('line_items',function(Blueprint $table){

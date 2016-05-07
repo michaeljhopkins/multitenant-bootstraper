@@ -18,6 +18,11 @@ class CreateTenantsTable extends Migration
 			$table->unsignedInteger('client_id')->index('tenants_fk0');
 			$table->string('name');
 			$table->string('url');
+            $table->timestamps();
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
+            $table->softDeletes();
+            $table->unsignedInteger('deleted_by')->nullable();
         });
     }
 

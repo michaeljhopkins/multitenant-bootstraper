@@ -21,10 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->softDeletes();
-            $table->unsignedInteger('deleted_by');
+            $table->unsignedInteger('deleted_by')->nullable();
         });
     }
 

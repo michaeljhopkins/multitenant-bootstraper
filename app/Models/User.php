@@ -1,7 +1,4 @@
 <?php namespace Multistarter\Models;
-
- as Model;
-
 /**
  * Multistarter\Models\User
  *

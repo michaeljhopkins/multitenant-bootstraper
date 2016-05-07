@@ -20,10 +20,10 @@ class CreateOrdersTable extends Migration
 			$table->decimal('total', 10, 0)->nullable();
 			$table->unsignedInteger('user_id')->index('orders_fk2');
             $table->timestamps();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->softDeletes();
-            $table->unsignedInteger('deleted_by');
+            $table->unsignedInteger('deleted_by')->nullable();
         });
         
     }

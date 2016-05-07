@@ -1,7 +1,7 @@
 <?php namespace Multistarter\Models;
 
 use HipsterJazzbo\Landlord\BelongsToTenant;
-use Illuminate\Database\Eloquent\Model as Model;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Multistarter\Models\BaseModel
@@ -26,8 +26,8 @@ class BaseModel extends Model
         'deleted_at',
         'created_at',
         'updated_at',
-        'tenant_id',
-        ];
+        'tenant_id'
+    ];
 
     public function createdBy()
     {

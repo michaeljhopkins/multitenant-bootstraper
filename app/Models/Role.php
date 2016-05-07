@@ -1,6 +1,6 @@
 <?php namespace Multistarter\Models;
 
-use Illuminate\Database\Eloquent\Model as Model;
+ as Model;
 
 /**
  * Multistarter\Models\Role
@@ -81,16 +81,12 @@ class Role extends BaseModel
 		'name' => 'required|string',
 		'slug' => 'required|string'
     ];
-    public function client() {
-		return $this->belongsTo('Multistarter\Models\Client', 'client_id', 'id');
+	
+	public function permissions() {
+		return $this->belongsToMany(Permission::class, 'permission_role', 'role_id', 'permission_id');
 	}
-public function tenant() {
-		return $this->belongsTo('Multistarter\Models\Tenant', 'tenant_id', 'id');
-	}
-public function permissions() {
-		return $this->belongsToMany('Multistarter\Models\Permission', 'permission_role', 'role_id', 'permission_id');
-	}
-public function users() {
-		return $this->belongsToMany('Multistarter\Models\User', 'role_user', 'role_id', 'user_id');
+	
+	public function users() {
+		return $this->belongsToMany(User::class, 'role_user', 'role_id', 'user_id');
 	}
 }

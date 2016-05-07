@@ -1,6 +1,6 @@
 <?php namespace Multistarter\Models;
 
-use Illuminate\Database\Eloquent\Model as Model;
+ as Model;
 
 /**
  * Multistarter\Models\Product
@@ -83,13 +83,8 @@ class Product extends BaseModel
 		'name' => 'string',
 		'recurring' => 'integer'
     ];
-    public function client() {
-		return $this->belongsTo('Multistarter\Models\Client', 'client_id', 'id');
-	}
-public function tenant() {
-		return $this->belongsTo('Multistarter\Models\Tenant', 'tenant_id', 'id');
-	}
-public function orders() {
-		return $this->belongsToMany('Multistarter\Models\Order', 'line_items', 'product_id', 'order_id');
+	
+	public function orders() {
+		return $this->belongsToMany(Order::class, 'line_items', 'product_id', 'order_id');
 	}
 }

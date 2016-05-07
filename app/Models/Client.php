@@ -1,6 +1,6 @@
 <?php namespace Multistarter\Models;
 
-use Illuminate\Database\Eloquent\Model as Model;
+ as Model;
 
 /**
  * Multistarter\Models\Client
@@ -53,22 +53,28 @@ class Client extends Model
     public static $rules = [
         'name' => 'required|string'
     ];
+	
     public function orders() {
-		return $this->hasMany('Multistarter\Models\Order', 'client_id', 'id');
+		return $this->hasMany(Order::class);
 	}
+	
 	public function permissions() {
-		return $this->hasMany('Multistarter\Models\Permission', 'client_id', 'id');
+		return $this->hasMany(Permission::class);
 	}
+	
 	public function products() {
-		return $this->hasMany('Multistarter\Models\Product', 'client_id', 'id');
+		return $this->hasMany(Product::class);
 	}
+	
 	public function roles() {
-		return $this->hasMany('Multistarter\Models\Role', 'client_id', 'id');
+		return $this->hasMany(Role::class);
 	}
+	
 	public function tenants() {
-		return $this->hasMany('Multistarter\Models\Tenant', 'client_id', 'id');
+		return $this->hasMany(Tenant::class);
 	}
+	
 	public function users() {
-		return $this->hasMany('Multistarter\Models\User', 'client_id', 'id');
+		return $this->hasMany(User::class);
 	}
 }

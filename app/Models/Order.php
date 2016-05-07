@@ -1,6 +1,6 @@
 <?php namespace Multistarter\Models;
 
-use Illuminate\Database\Eloquent\Model as Model;
+ as Model;
 
 /**
  * Multistarter\Models\Order
@@ -79,16 +79,12 @@ class Order extends BaseModel
 		'tenant_id' => 'required|integer|exists:tenants,id',
 		'user_id' => 'required|integer|exists:users,id'
     ];
-    public function client() {
-		return $this->belongsTo('Multistarter\Models\Client', 'client_id', 'id');
-	}
-	public function tenant() {
-		return $this->belongsTo('Multistarter\Models\Tenant', 'tenant_id', 'id');
-	}
+	
 	public function user() {
-		return $this->belongsTo('Multistarter\Models\User', 'user_id', 'id');
+		return $this->belongsTo(User::class);
 	}
+	
 	public function products() {
-		return $this->belongsToMany('Multistarter\Models\Product', 'line_items', 'order_id', 'product_id');
+		return $this->belongsToMany(Product::class, 'line_items', 'order_id', 'product_id');
 	}
 }

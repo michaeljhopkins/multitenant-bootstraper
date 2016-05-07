@@ -3,6 +3,7 @@
 namespace Multistarter\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Landlord;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Landlord::addTenant($tenantColumn, $tenantId)
+        #Landlord::addTenant($tenantColumn, $tenantId);
     }
 }

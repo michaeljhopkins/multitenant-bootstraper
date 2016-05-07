@@ -31,8 +31,8 @@
       "database"
     ],
     "psr-4": {
-      "Hopkins\\LaravelFkMigration\\": "packages/Hopkins/laravel-fk-migration/src",
-      "Hopkins\\Generator\\": "packages/Hopkins/laravel-generator/src",
+      "Hopkins\\LaravelFkMigration\\": "app/Packages/laravel-fk-migration",
+      "Hopkins\\Generator\\": "app/Packages/laravel-generator/src",
       "Multistarter\\": "app/"
     }
   },

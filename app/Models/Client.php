@@ -15,6 +15,18 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereName($value)
  * @mixin \Eloquent
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property integer $created_by
+ * @property integer $updated_by
+ * @property string $deleted_at
+ * @property integer $deleted_by
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereDeletedBy($value)
  */
 class Client extends Model
 {

@@ -14,17 +14,18 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function(Blueprint $table) {
-            $table->integer('id', true);
-			$table->integer('client_id')->index('orders_fk0');
-			$table->integer('tenant_id')->index('orders_fk1');
+            $table->increments('id');
+			$table->unsignedInteger('client_id')->index('orders_fk0');
+			$table->unsignedInteger('tenant_id')->index('orders_fk1');
 			$table->decimal('total', 10, 0)->nullable();
-			$table->integer('user_id')->index('orders_fk2');
+			$table->unsignedInteger('user_id')->index('orders_fk2');
             $table->timestamps();
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->softDeletes();
             $table->unsignedInteger('deleted_by');
         });
+        
     }
 
     /**

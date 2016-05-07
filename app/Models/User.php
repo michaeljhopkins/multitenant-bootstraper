@@ -29,8 +29,19 @@ use Illuminate\Database\Eloquent\Model as Model;
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property integer $created_by
+ * @property integer $updated_by
+ * @property string $deleted_at
+ * @property integer $deleted_by
+ * @property-read \Multistarter\Models\User $createdBy
+ * @property-read \Multistarter\Models\User $updatedBy
+ * @property-read \Multistarter\Models\User $deletedBy
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\User whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\User whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\User whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\User whereDeletedBy($value)
  */
-class User extends Model
+class User extends BaseModel
 {
     
     /**
@@ -78,16 +89,17 @@ class User extends Model
     public function client() {
 		return $this->belongsTo('Multistarter\Models\Client', 'client_id', 'id');
 	}
-public function tenant() {
+	public function tenant() {
 		return $this->belongsTo('Multistarter\Models\Tenant', 'tenant_id', 'id');
 	}
-public function orders() {
+	public function orders()
+	{
 		return $this->hasMany('Multistarter\Models\Order', 'user_id', 'id');
 	}
-public function permissions() {
+	public function permissions() {
 		return $this->belongsToMany('Multistarter\Models\Permission', 'permission_user', 'user_id', 'permission_id');
 	}
-public function roles() {
+	public function roles() {
 		return $this->belongsToMany('Multistarter\Models\Role', 'role_user', 'user_id', 'role_id');
 	}
 }

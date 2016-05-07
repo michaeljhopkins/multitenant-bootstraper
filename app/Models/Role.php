@@ -20,8 +20,23 @@ use Illuminate\Database\Eloquent\Model as Model;
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereSlug($value)
  * @mixin \Eloquent
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property integer $created_by
+ * @property integer $updated_by
+ * @property string $deleted_at
+ * @property integer $deleted_by
+ * @property-read \Multistarter\Models\User $createdBy
+ * @property-read \Multistarter\Models\User $updatedBy
+ * @property-read \Multistarter\Models\User $deletedBy
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereDeletedBy($value)
  */
-class Role extends Model
+class Role extends BaseModel
 {
     
     /**

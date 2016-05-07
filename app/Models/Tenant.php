@@ -66,19 +66,18 @@ class Tenant extends Model
     public function client() {
 		return $this->belongsTo('Multistarter\Models\Client', 'client_id', 'id');
 	}
-public function orders() {
+	public function orders() {
 		return $this->hasMany('Multistarter\Models\Order', 'tenant_id', 'id');
 	}
-public function permissions() {
+	public function permissions() {
 		return $this->hasMany('Multistarter\Models\Permission', 'tenant_id', 'id');
 	}
-public function products() {
+	public function products() {
 		return $this->hasMany('Multistarter\Models\Product', 'tenant_id', 'id');
 	}
-public function roles() {
+	public function roles() {
 		return $this->hasMany('Multistarter\Models\Role', 'tenant_id', 'id');
-	}
-public function users() {
+	}public function users() {
 		return $this->hasMany('Multistarter\Models\User', 'tenant_id', 'id');
 	}
 }

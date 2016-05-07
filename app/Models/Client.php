@@ -56,19 +56,19 @@ class Client extends Model
     public function orders() {
 		return $this->hasMany('Multistarter\Models\Order', 'client_id', 'id');
 	}
-public function permissions() {
+	public function permissions() {
 		return $this->hasMany('Multistarter\Models\Permission', 'client_id', 'id');
 	}
-public function products() {
+	public function products() {
 		return $this->hasMany('Multistarter\Models\Product', 'client_id', 'id');
 	}
-public function roles() {
+	public function roles() {
 		return $this->hasMany('Multistarter\Models\Role', 'client_id', 'id');
 	}
-public function tenants() {
+	public function tenants() {
 		return $this->hasMany('Multistarter\Models\Tenant', 'client_id', 'id');
 	}
-public function users() {
+	public function users() {
 		return $this->hasMany('Multistarter\Models\User', 'client_id', 'id');
 	}
 }

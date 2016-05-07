@@ -20,8 +20,23 @@ use Illuminate\Database\Eloquent\Model as Model;
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereTotal($value)
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereUserId($value)
  * @mixin \Eloquent
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property integer $created_by
+ * @property integer $updated_by
+ * @property string $deleted_at
+ * @property integer $deleted_by
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Order whereDeletedBy($value)
+ * @property-read \Multistarter\Models\User $createdBy
+ * @property-read \Multistarter\Models\User $updatedBy
+ * @property-read \Multistarter\Models\User $deletedBy
  */
-class Order extends Model
+class Order extends BaseModel
 {
     
     /**
@@ -67,13 +82,13 @@ class Order extends Model
     public function client() {
 		return $this->belongsTo('Multistarter\Models\Client', 'client_id', 'id');
 	}
-public function tenant() {
+	public function tenant() {
 		return $this->belongsTo('Multistarter\Models\Tenant', 'tenant_id', 'id');
 	}
-public function user() {
+	public function user() {
 		return $this->belongsTo('Multistarter\Models\User', 'user_id', 'id');
 	}
-public function products() {
+	public function products() {
 		return $this->belongsToMany('Multistarter\Models\Product', 'line_items', 'order_id', 'product_id');
 	}
 }

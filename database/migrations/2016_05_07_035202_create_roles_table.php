@@ -14,9 +14,9 @@ class CreateRolesTable extends Migration
     public function up()
     {
         Schema::create('roles', function(Blueprint $table) {
-            $table->integer('id', true);
-			$table->integer('client_id')->index('roles_fk0');
-			$table->integer('tenant_id')->index('roles_fk1');
+            $table->increments('id');
+            $table->unsignedInteger('client_id')->index('products_fk0');
+            $table->unsignedInteger('tenant_id')->index('products_fk1');
 			$table->string('name');
 			$table->string('slug')->unique('slug');
             $table->timestamps();
@@ -24,6 +24,21 @@ class CreateRolesTable extends Migration
             $table->unsignedInteger('updated_by');
             $table->softDeletes();
             $table->unsignedInteger('deleted_by');
+        });
+        Schema::create('permission_role',function(Blueprint $table){
+            $table->increments('id');
+            $table->unsignedInteger('permission_id');
+            $table->unsignedInteger('role_id');
+        });
+        Schema::create('permission_user',function(Blueprint $table){
+            $table->increments('id');
+            $table->unsignedInteger('permission_id');
+            $table->unsignedInteger('user_id');
+        });
+        Schema::create('role_user',function(Blueprint $table){
+            $table->increments('id');
+            $table->unsignedInteger('role_id');
+            $table->unsignedInteger('user_id');
         });
     }
 
@@ -35,6 +50,9 @@ class CreateRolesTable extends Migration
     public function down()
     {
         Schema::drop('roles');
+        Schema::drop('permission_role');
+        Schema::drop('permission_user');
+        Schema::drop('role_user');
     }
 
 }

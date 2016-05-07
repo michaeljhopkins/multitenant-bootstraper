@@ -20,8 +20,23 @@ use Illuminate\Database\Eloquent\Model as Model;
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereSlug($value)
  * @mixin \Eloquent
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property integer $created_by
+ * @property integer $updated_by
+ * @property string $deleted_at
+ * @property integer $deleted_by
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Permission whereDeletedBy($value)
+ * @property-read \Multistarter\Models\User $createdBy
+ * @property-read \Multistarter\Models\User $updatedBy
+ * @property-read \Multistarter\Models\User $deletedBy
  */
-class Permission extends Model
+class Permission extends BaseModel
 {
     
     /**

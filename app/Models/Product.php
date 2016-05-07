@@ -21,8 +21,23 @@ use Illuminate\Database\Eloquent\Model as Model;
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product wherePrice($value)
  * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereRecurring($value)
  * @mixin \Eloquent
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property integer $created_by
+ * @property integer $updated_by
+ * @property string $deleted_at
+ * @property integer $deleted_by
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereDeletedBy($value)
+ * @property-read \Multistarter\Models\User $createdBy
+ * @property-read \Multistarter\Models\User $updatedBy
+ * @property-read \Multistarter\Models\User $deletedBy
  */
-class Product extends Model
+class Product extends BaseModel
 {
     
     /**

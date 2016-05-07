@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "169b4dda09e57d872b2b473051c20b64",
-    "content-hash": "909b48cd35286fac7ad30c7c080f9a5f",
+    "hash": "10547e83029a4a922fb409dfa2c771e4",
+    "content-hash": "755911c77ceff3339bd806643785bb8e",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1141,6 +1141,49 @@
                 "packager"
             ],
             "time": "2016-04-24 22:09:27"
+        },
+        {
+            "name": "laracasts/flash",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "6031286d93efbb3fe7da58a1ca4b6b44ccd45ae3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/6031286d93efbb3fe7da58a1ca4b6b44ccd45ae3",
+                "reference": "6031286d93efbb3fe7da58a1ca4b6b44ccd45ae3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2016-03-14 16:02:53"
         },
         {
             "name": "laravel/framework",
@@ -4297,7 +4340,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "laravelcollective/html": 20,
-        "hopkins/migrate-reload": 20
+        "hopkins/migrate-reload": 20,
+        "laracasts/flash": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

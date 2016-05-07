@@ -1,9 +1,5 @@
 <?php
 
-use Barryvdh\Debugbar\Facade;
-use Collective\Html\FormFacade;
-use Collective\Html\HtmlFacade;
-
 return [
 
     /*
@@ -151,7 +147,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        JeroenG\Packager\PackagerServiceProvider::class,
+        #JeroenG\Packager\PackagerServiceProvider::class,
 
         /**
          * Package Service Providers
@@ -163,6 +159,7 @@ return [
         Watson\BootstrapForm\BootstrapFormServiceProvider::class,
         Hopkins\MigrateReload\MigrateReloadServiceProvider::class,
         HipsterJazzbo\Landlord\LandlordServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
 
 
 
@@ -222,11 +219,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Form' => FormFacade::class,
-        'Html' => HtmlFacade::class,
-        'Debugbar' => Facade::class,
+        'Form' => Collective\Form\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'BsForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
         'Landlord'   => HipsterJazzbo\Landlord\Facades\Landlord::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
 
     ],
 

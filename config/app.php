@@ -147,18 +147,18 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        #JeroenG\Packager\PackagerServiceProvider::class,
 
         /**
          * Package Service Providers
          */
-        
+        JeroenG\Packager\PackagerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Watson\BootstrapForm\BootstrapFormServiceProvider::class,
         Hopkins\MigrateReload\MigrateReloadServiceProvider::class,
         HipsterJazzbo\Landlord\LandlordServiceProvider::class,
+        Hopkins\Generator\GeneratorServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
 
 

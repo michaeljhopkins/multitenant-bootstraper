@@ -3,8 +3,9 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreatePermissionsTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -12,14 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('client_id');
-            $table->unsignedInteger('tenant_id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('permissions', function(Blueprint $table) {
+            $table->integer('id', true);
+			$table->integer('client_id')->index('permissions_fk0');
+			$table->integer('tenant_id')->index('permissions_fk1');
+			$table->string('name');
+			$table->string('slug')->unique('slug');
             $table->timestamps();
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
@@ -35,6 +34,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('permissions');
     }
+
 }

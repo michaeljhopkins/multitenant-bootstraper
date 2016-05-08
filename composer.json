@@ -16,8 +16,8 @@
     "doctrine/dbal": "^2.5",
     "jeroen-g/laravel-packager": "^1.5",
     "hopkins/migrate-reload": "^1.0@dev",
-    "hipsterjazzbo/landlord": "^1.0",
-    "laracasts/flash": "dev-master"
+    "laracasts/flash": "dev-master",
+    "iatstuti/laravel-cascade-soft-deletes": "1.0.*"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

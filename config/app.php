@@ -157,7 +157,6 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Watson\BootstrapForm\BootstrapFormServiceProvider::class,
         Hopkins\MigrateReload\MigrateReloadServiceProvider::class,
-        HipsterJazzbo\Landlord\LandlordServiceProvider::class,
         Hopkins\Generator\GeneratorServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
 
@@ -219,11 +218,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Form' => Collective\Form\FormFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'BsForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
-        'Landlord' => HipsterJazzbo\Landlord\Facades\LandlordFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
 
     ],

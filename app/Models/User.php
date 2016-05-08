@@ -1,4 +1,15 @@
 <?php namespace Multi\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Multi\Packages\Acl\Traits\HasRoles;
+use Multi\Packages\Acl\Traits\HasRolesContract;
+use Multi\Packages\MultiTenant\Traits\TenantScopedModelTrait;
+/* Authentication and Authorization */
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+
 /**
  * Multi\Models\User
  *
@@ -11,11 +22,16 @@
  * @property string $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property-read \Multi\Models\Client $client
- * @property-read \Multi\Models\Tenant $tenant
+ * @property integer $created_by
+ * @property integer $updated_by
+ * @property string $deleted_at
+ * @property integer $deleted_by
  * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Order[] $orders
  * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Permission[] $permissions
  * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Role[] $roles
+ * @property-read \Multi\Models\User $deletedBy
+ * @property-read \Multi\Models\Client $client
+ * @property-read \Multi\Models\Tenant $tenant
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereClientId($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereTenantId($value)
@@ -25,40 +41,22 @@
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereRememberToken($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereUpdatedAt($value)
- * @mixin \Eloquent
- * @property integer $created_by
- * @property integer $updated_by
- * @property string $deleted_at
- * @property integer $deleted_by
- * @property-read \Multi\Models\User $createdBy
- * @property-read \Multi\Models\User $updatedBy
- * @property-read \Multi\Models\User $deletedBy
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereCreatedBy($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereUpdatedBy($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereDeletedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\User whereDeletedBy($value)
+ * @mixin \Eloquent
+ * @property-read \Multi\Models\User $createdBy
+ * @property-read \Multi\Models\User $updatedBy
  */
-class User extends BaseModel
+class User extends BaseModel implements AuthenticatableContract, AuthorizableContract, HasRolesContract
 {
-    
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    public $table = "users";
-    
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
+    use Authenticatable, CanResetPassword, TenantScopedModelTrait, Authorizable, HasRoles, SoftDeletes;
+    public function __construct(array $attributes = []){
+        parent::__construct($attributes);
+        $addToHidden = ['password','stripe_plan','stripe_subscription','stripe_id','two_factor_options','confirmation_code'];
+        $this->hidden = array_merge($this->hidden,$addToHidden);
+    }
     protected $casts = [
         'client_id' => 'integer',
 		'tenant_id' => 'integer',
@@ -66,11 +64,6 @@ class User extends BaseModel
 		'password' => 'string'
     ];
 
-    /**
-     * The rules that is used to validate.
-     *
-     * @var array
-     */
     public static $rules = [
         'client_id' => 'required|integer|exists:clients,id',
 		'tenant_id' => 'required|integer|exists:tenants,id',
@@ -81,13 +74,5 @@ class User extends BaseModel
 	public function orders()
 	{
 		return $this->hasMany(Order::class, 'user_id', 'id');
-	}
-	
-	public function permissions() {
-		return $this->belongsToMany(Permission::class, 'permission_user', 'user_id', 'permission_id');
-	}
-	
-	public function roles() {
-		return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
 	}
 }

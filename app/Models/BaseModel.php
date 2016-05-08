@@ -1,22 +1,20 @@
 <?php namespace Multi\Models;
 
-use HipsterJazzbo\Landlord\BelongsToTenant;
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Multi\Models\BaseModel
  *
  * @property-read \Multi\Models\User $createdBy
+ * @property-read \Multi\Models\User $updatedBy
  * @property-read \Multi\Models\User $deletedBy
  * @property-read \Multi\Models\Client $client
  * @property-read \Multi\Models\Tenant $tenant
  * @mixin \Eloquent
- * @property-read \Multi\Models\User $updatedBy
  */
 class BaseModel extends Model
 {
-    use BelongsToTenant;
-
     protected $hidden = [
         'created_by',
         'updated_by',
@@ -26,7 +24,31 @@ class BaseModel extends Model
         'updated_at',
     ];
     
+    protected $tenantColumns = ['client_id','tenant_id'];
+    
     protected $guarded = ['id'];
+
+    /**
+     * Listen for save event.
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function($model){
+            if (Auth::check()) {
+                $model->created_by = Auth::id();
+                $model->updated_by = Auth::id();
+            }
+        });
+
+        static::updating(function($model)
+        {
+            if (Auth::check() && $model->logsCreatedAndUpdatedBy) {
+                $model->updated_by = Auth::id();
+            }
+        });
+    }
     
     public function createdBy()
     {

@@ -1,4 +1,6 @@
 <?php namespace Multi\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Multi\Packages\MultiTenant\Traits\TenantScopedModelTrait;
 
 /**
  * Multi\Models\Order
@@ -8,63 +10,42 @@
  * @property integer $tenant_id
  * @property float $total
  * @property integer $user_id
- * @property-read \Multi\Models\Client $client
- * @property-read \Multi\Models\Tenant $tenant
- * @property-read \Multi\Models\User $user
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Product[] $products
- * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereClientId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereTenantId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereTotal($value)
- * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereUserId($value)
- * @mixin \Eloquent
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property integer $created_by
  * @property integer $updated_by
  * @property string $deleted_at
  * @property integer $deleted_by
+ * @property-read \Multi\Models\User $user
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Product[] $products
+ * @property-read \Multi\Models\User $deletedBy
+ * @property-read \Multi\Models\Client $client
+ * @property-read \Multi\Models\Tenant $tenant
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereClientId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereTenantId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereTotal($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereCreatedBy($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereUpdatedBy($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereDeletedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Order whereDeletedBy($value)
+ * @mixin \Eloquent
  * @property-read \Multi\Models\User $createdBy
  * @property-read \Multi\Models\User $updatedBy
- * @property-read \Multi\Models\User $deletedBy
  */
 class Order extends BaseModel
 {
-    
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    public $table = "orders";
-    
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
+	use SoftDeletes, TenantScopedModelTrait;
+
+	protected $casts = [
         'client_id' => 'integer',
 		'tenant_id' => 'integer',
 		'user_id' => 'integer'
     ];
 
-    /**
-     * The rules that is used to validate.
-     *
-     * @var array
-     */
     public static $rules = [
         'client_id' => 'required|integer|exists:clients,id',
 		'tenant_id' => 'required|integer|exists:tenants,id',

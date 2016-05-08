@@ -23,6 +23,7 @@ class TenantScoping
         \Log::info('start');
         $tenant = (Cache::has('domain_'. Request::getHost())) ? Cache::get('domain_'. Request::getHost()) : Tenant::getCurrent();
         TenantScope::addTenant('tenant_id', $tenant->id);
+        TenantScope::addTenant('client_id',$tenant->id);
         \Log::info($tenant->toJson());
         return $next($request);
     }

@@ -169,6 +169,7 @@ return [
         // Multi\Providers\BroadcastServiceProvider::class,
         Multi\Providers\AuthServiceProvider::class,
         Multi\Providers\EventServiceProvider::class,
+        Multi\Providers\PermissionServiceProvider::class,
         Multi\Providers\RouteServiceProvider::class,
 
 

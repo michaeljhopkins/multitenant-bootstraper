@@ -1,5 +1,7 @@
 <?php
 
+use Multi\Models\User;
+
 return [
 
     /*
@@ -67,7 +69,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Multi\User::class,
+            'model' => User::class,
         ],
 
         // 'users' => [

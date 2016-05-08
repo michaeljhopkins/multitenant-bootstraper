@@ -25,30 +25,12 @@ $factory->define(Multi\Models\Order::class, function (Faker\Generator $faker) {
 	];
 });
 
-$factory->define(Multi\Models\Permission::class, function (Faker\Generator $faker) {
-	return [
-		'client_id' => $faker->randomNumber(8),
-		'tenant_id' => $faker->randomNumber(8),
-		'name' => $faker->name,
-		'slug' => $faker->slug
-	];
-});
-
 $factory->define(Multi\Models\Product::class, function (Faker\Generator $faker) {
 	return [
 		'client_id' => $faker->randomNumber(8),
 		'tenant_id' => $faker->randomNumber(8),
 		'name' => $faker->name,
 		'recurring' => $faker->randomNumber(8)
-	];
-});
-
-$factory->define(Multi\Models\Role::class, function (Faker\Generator $faker) {
-	return [
-		'client_id' => $faker->randomNumber(8),
-		'tenant_id' => $faker->randomNumber(8),
-		'name' => $faker->name,
-		'slug' => $faker->slug
 	];
 });
 

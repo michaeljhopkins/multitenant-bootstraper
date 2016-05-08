@@ -12,6 +12,6 @@ class HomeController extends Controller
     public function index()
     {
         $clients = Client::with(['tenants.products'])->get();
-        dd($clients);
+        dd($clients->toArray());
     }
 }

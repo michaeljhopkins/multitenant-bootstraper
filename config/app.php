@@ -1,5 +1,7 @@
 <?php
 
+use Multi\Packages\ReverseSeed\Facades\ReverseSeed;
+
 return [
 
     /*
@@ -159,6 +161,7 @@ return [
         Hopkins\MigrateReload\MigrateReloadServiceProvider::class,
         Hopkins\Generator\GeneratorServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
 
 
 

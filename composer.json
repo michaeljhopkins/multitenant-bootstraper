@@ -17,7 +17,8 @@
     "jeroen-g/laravel-packager": "^1.5",
     "hopkins/migrate-reload": "^1.0@dev",
     "laracasts/flash": "dev-master",
-    "iatstuti/laravel-cascade-soft-deletes": "1.0.*"
+    "iatstuti/laravel-cascade-soft-deletes": "1.0.*",
+    "orangehill/iseed": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

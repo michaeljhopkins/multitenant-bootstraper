@@ -1,6 +1,6 @@
 <?php
 
-namespace Multistarter\Jobs;
+namespace Multi\Jobs;
 
 use Illuminate\Bus\Queueable;
 

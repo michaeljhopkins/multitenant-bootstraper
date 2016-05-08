@@ -1,10 +1,10 @@
-<?php namespace Multistarter\Http\Controllers;
+<?php namespace Multi\Http\Controllers;
 
-use Multistarter\Http\Requests;
-use Multistarter\Http\Requests\CreateUserRequest;
-use Multistarter\Http\Requests\UpdateUserRequest;
-use Multistarter\Services\UserService;
-use Multistarter\Http\Controllers\Controller as BaseController;
+use Multi\Http\Requests;
+use Multi\Http\Requests\CreateUserRequest;
+use Multi\Http\Requests\UpdateUserRequest;
+use Multi\Services\UserService;
+use Multi\Http\Controllers\Controller as BaseController;
 use Flash;
 
 class UserController extends BaseController

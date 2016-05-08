@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Repositories;
+<?php namespace Multi\Repositories;
 
-use Multistarter\Models\Tenant;
-use Multistarter\Repositories\Repository;
+use Multi\Models\Tenant;
+use Multi\Repositories\Repository;
 
 class TenantRepository extends Repository
 {

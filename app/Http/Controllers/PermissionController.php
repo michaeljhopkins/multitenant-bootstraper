@@ -1,10 +1,10 @@
-<?php namespace Multistarter\Http\Controllers;
+<?php namespace Multi\Http\Controllers;
 
-use Multistarter\Http\Requests;
-use Multistarter\Http\Requests\CreatePermissionRequest;
-use Multistarter\Http\Requests\UpdatePermissionRequest;
-use Multistarter\Services\PermissionService;
-use Multistarter\Http\Controllers\Controller as BaseController;
+use Multi\Http\Requests;
+use Multi\Http\Requests\CreatePermissionRequest;
+use Multi\Http\Requests\UpdatePermissionRequest;
+use Multi\Services\PermissionService;
+use Multi\Http\Controllers\Controller as BaseController;
 use Flash;
 
 class PermissionController extends BaseController

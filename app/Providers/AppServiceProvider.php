@@ -1,6 +1,6 @@
 <?php
 
-namespace Multistarter\Providers;
+namespace Multi\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Landlord;

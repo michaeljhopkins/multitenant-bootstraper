@@ -1,6 +1,6 @@
 <?php
 
-namespace Multistarter\Exceptions;
+namespace Multi\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

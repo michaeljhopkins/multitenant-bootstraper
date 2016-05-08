@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => Multistarter\User::class,
+        'model' => Multi\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

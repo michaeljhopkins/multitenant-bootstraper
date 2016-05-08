@@ -1,19 +1,19 @@
-<?php namespace Multistarter\Models;
+<?php namespace Multi\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Multistarter\Models\Client
+ * Multi\Models\Client
  *
  * @property integer $id
  * @property string $name
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\Order[] $orders
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\Permission[] $permissions
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\Product[] $products
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\Role[] $roles
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\Tenant[] $tenants
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\User[] $users
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereName($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Order[] $orders
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Permission[] $permissions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Product[] $products
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Role[] $roles
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Tenant[] $tenants
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\User[] $users
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereName($value)
  * @mixin \Eloquent
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -21,15 +21,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $updated_by
  * @property string $deleted_at
  * @property integer $deleted_by
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereUpdatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereCreatedBy($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereUpdatedBy($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereDeletedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Client whereDeletedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Client whereDeletedBy($value)
  */
 class Client extends Model
 {
+	
+	protected $guarded = ['id'];
     
     /**
      * The database table used by the model.

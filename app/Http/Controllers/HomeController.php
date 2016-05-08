@@ -1,11 +1,11 @@
 <?php
 
-namespace Multistarter\Http\Controllers;
+namespace Multi\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Multistarter\Http\Requests;
-use Multistarter\Models\Client;
+use Multi\Http\Requests;
+use Multi\Models\Client;
 
 class HomeController extends Controller
 {

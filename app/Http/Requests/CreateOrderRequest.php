@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Http\Requests;
+<?php namespace Multi\Http\Requests;
 
-use Multistarter\Http\Requests\Request;
-use Multistarter\Models\Order;
+use Multi\Http\Requests\Request;
+use Multi\Models\Order;
 
 class CreateOrderRequest extends Request {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Multistarter\Http\Controllers\Auth;
+namespace Multi\Http\Controllers\Auth;
 
-use Multistarter\Http\Controllers\Controller;
+use Multi\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

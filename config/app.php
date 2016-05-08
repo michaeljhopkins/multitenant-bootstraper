@@ -166,11 +166,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Multistarter\Providers\AppServiceProvider::class,
-        // Multistarter\Providers\BroadcastServiceProvider::class,
-        Multistarter\Providers\AuthServiceProvider::class,
-        Multistarter\Providers\EventServiceProvider::class,
-        Multistarter\Providers\RouteServiceProvider::class,
+        Multi\Providers\AppServiceProvider::class,
+        // Multi\Providers\BroadcastServiceProvider::class,
+        Multi\Providers\AuthServiceProvider::class,
+        Multi\Providers\EventServiceProvider::class,
+        Multi\Providers\RouteServiceProvider::class,
 
 
     ],

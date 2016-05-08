@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Repositories;
+<?php namespace Multi\Repositories;
 
-use Multistarter\Models\Role;
-use Multistarter\Repositories\Repository;
+use Multi\Models\Role;
+use Multi\Repositories\Repository;
 
 class RoleRepository extends Repository
 {

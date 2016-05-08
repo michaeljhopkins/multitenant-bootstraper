@@ -1,10 +1,10 @@
-<?php namespace Multistarter\Http\Controllers;
+<?php namespace Multi\Http\Controllers;
 
-use Multistarter\Http\Requests;
-use Multistarter\Http\Requests\CreateRoleRequest;
-use Multistarter\Http\Requests\UpdateRoleRequest;
-use Multistarter\Services\RoleService;
-use Multistarter\Http\Controllers\Controller as BaseController;
+use Multi\Http\Requests;
+use Multi\Http\Requests\CreateRoleRequest;
+use Multi\Http\Requests\UpdateRoleRequest;
+use Multi\Services\RoleService;
+use Multi\Http\Controllers\Controller as BaseController;
 use Flash;
 
 class RoleController extends BaseController

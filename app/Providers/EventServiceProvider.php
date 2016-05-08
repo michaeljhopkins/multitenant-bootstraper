@@ -1,6 +1,6 @@
 <?php
 
-namespace Multistarter\Providers;
+namespace Multi\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Multistarter\Events\SomeEvent' => [
-            'Multistarter\Listeners\EventListener',
+        'Multi\Events\SomeEvent' => [
+            'Multi\Listeners\EventListener',
         ],
     ];
 

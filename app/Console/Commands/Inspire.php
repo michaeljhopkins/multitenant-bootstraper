@@ -1,6 +1,6 @@
 <?php
 
-namespace Multistarter\Console\Commands;
+namespace Multi\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

@@ -1,4 +1,4 @@
-<?php namespace Multistarter\Repositories;
+<?php namespace Multi\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Container\Container as App;

@@ -1,17 +1,17 @@
-<?php namespace Multistarter\Models;
+<?php namespace Multi\Models;
 
 use HipsterJazzbo\Landlord\BelongsToTenant;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Multistarter\Models\BaseModel
+ * Multi\Models\BaseModel
  *
- * @property-read \Multistarter\Models\User $createdBy
- * @property-read \Multistarter\Models\User $deletedBy
- * @property-read \Multistarter\Models\Client $client
- * @property-read \Multistarter\Models\Tenant $tenant
+ * @property-read \Multi\Models\User $createdBy
+ * @property-read \Multi\Models\User $deletedBy
+ * @property-read \Multi\Models\Client $client
+ * @property-read \Multi\Models\Tenant $tenant
  * @mixin \Eloquent
- * @property-read \Multistarter\Models\User $updatedBy
+ * @property-read \Multi\Models\User $updatedBy
  */
 class BaseModel extends Model
 {

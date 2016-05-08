@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Http\Requests;
+<?php namespace Multi\Http\Requests;
 
-use Multistarter\Http\Requests\Request;
-use Multistarter\Models\Client;
+use Multi\Http\Requests\Request;
+use Multi\Models\Client;
 
 class CreateClientRequest extends Request {
 

@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Models;
+<?php namespace Multi\Models;
 
 /**
- * Multistarter\Models\Product
+ * Multi\Models\Product
  *
  * @property integer $id
  * @property integer $client_id
@@ -9,15 +9,15 @@
  * @property string $name
  * @property float $price
  * @property integer $recurring
- * @property-read \Multistarter\Models\Client $client
- * @property-read \Multistarter\Models\Tenant $tenant
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\Order[] $orders
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereClientId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereTenantId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product wherePrice($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereRecurring($value)
+ * @property-read \Multi\Models\Client $client
+ * @property-read \Multi\Models\Tenant $tenant
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Order[] $orders
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereClientId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereTenantId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product wherePrice($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereRecurring($value)
  * @mixin \Eloquent
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -25,15 +25,15 @@
  * @property integer $updated_by
  * @property string $deleted_at
  * @property integer $deleted_by
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereUpdatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereCreatedBy($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereUpdatedBy($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereDeletedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Product whereDeletedBy($value)
- * @property-read \Multistarter\Models\User $createdBy
- * @property-read \Multistarter\Models\User $updatedBy
- * @property-read \Multistarter\Models\User $deletedBy
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Product whereDeletedBy($value)
+ * @property-read \Multi\Models\User $createdBy
+ * @property-read \Multi\Models\User $updatedBy
+ * @property-read \Multi\Models\User $deletedBy
  */
 class Product extends BaseModel
 {

@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Repositories;
+<?php namespace Multi\Repositories;
 
-use Multistarter\Models\Order;
-use Multistarter\Repositories\Repository;
+use Multi\Models\Order;
+use Multi\Repositories\Repository;
 
 class OrderRepository extends Repository
 {

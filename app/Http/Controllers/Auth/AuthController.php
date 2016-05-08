@@ -1,10 +1,10 @@
 <?php
 
-namespace Multistarter\Http\Controllers\Auth;
+namespace Multi\Http\Controllers\Auth;
 
-use Multistarter\User;
+use Multi\User;
 use Validator;
-use Multistarter\Http\Controllers\Controller;
+use Multi\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

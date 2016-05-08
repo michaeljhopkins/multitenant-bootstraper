@@ -1,6 +1,6 @@
 <?php
 
-namespace Multistarter\Http\Requests;
+namespace Multi\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

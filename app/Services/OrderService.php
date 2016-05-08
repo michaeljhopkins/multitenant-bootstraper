@@ -1,6 +1,6 @@
-<?php namespace Multistarter\Services;
+<?php namespace Multi\Services;
 
-use Multistarter\Repositories\OrderRepository;
+use Multi\Repositories\OrderRepository;
 
 class OrderService
 {

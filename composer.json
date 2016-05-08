@@ -33,7 +33,7 @@
     "psr-4": {
       "Hopkins\\LaravelFkMigration\\": "app/Packages/laravel-fk-migration",
       "Hopkins\\Generator\\": "app/Packages/laravel-generator/src",
-      "Multistarter\\": "app/"
+      "Multi\\": "app/"
     }
   },
   "autoload-dev": {

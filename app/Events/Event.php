@@ -1,6 +1,6 @@
 <?php
 
-namespace Multistarter\Events;
+namespace Multi\Events;
 
 abstract class Event
 {

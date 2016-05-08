@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Multistarter\User::class,
+            'model' => Multi\User::class,
         ],
 
         // 'users' => [

@@ -11,13 +11,13 @@
 |
 */
 
-$factory->define(Multistarter\Models\Client::class, function (Faker\Generator $faker) {
+$factory->define(Multi\Models\Client::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->company
 	];
 });
 
-$factory->define(Multistarter\Models\Order::class, function (Faker\Generator $faker) {
+$factory->define(Multi\Models\Order::class, function (Faker\Generator $faker) {
 	return [
 		'client_id' => $faker->randomNumber(8),
 		'tenant_id' => $faker->randomNumber(8),
@@ -25,7 +25,7 @@ $factory->define(Multistarter\Models\Order::class, function (Faker\Generator $fa
 	];
 });
 
-$factory->define(Multistarter\Models\Permission::class, function (Faker\Generator $faker) {
+$factory->define(Multi\Models\Permission::class, function (Faker\Generator $faker) {
 	return [
 		'client_id' => $faker->randomNumber(8),
 		'tenant_id' => $faker->randomNumber(8),
@@ -34,7 +34,7 @@ $factory->define(Multistarter\Models\Permission::class, function (Faker\Generato
 	];
 });
 
-$factory->define(Multistarter\Models\Product::class, function (Faker\Generator $faker) {
+$factory->define(Multi\Models\Product::class, function (Faker\Generator $faker) {
 	return [
 		'client_id' => $faker->randomNumber(8),
 		'tenant_id' => $faker->randomNumber(8),
@@ -43,7 +43,7 @@ $factory->define(Multistarter\Models\Product::class, function (Faker\Generator $
 	];
 });
 
-$factory->define(Multistarter\Models\Role::class, function (Faker\Generator $faker) {
+$factory->define(Multi\Models\Role::class, function (Faker\Generator $faker) {
 	return [
 		'client_id' => $faker->randomNumber(8),
 		'tenant_id' => $faker->randomNumber(8),
@@ -52,7 +52,7 @@ $factory->define(Multistarter\Models\Role::class, function (Faker\Generator $fak
 	];
 });
 
-$factory->define(Multistarter\Models\Tenant::class, function (Faker\Generator $faker) {
+$factory->define(Multi\Models\Tenant::class, function (Faker\Generator $faker) {
 	return [
 		'client_id' => $faker->randomNumber(8),
 		'name' => $faker->url,
@@ -60,7 +60,7 @@ $factory->define(Multistarter\Models\Tenant::class, function (Faker\Generator $f
 	];
 });
 
-$factory->define(Multistarter\Models\User::class, function (Faker\Generator $faker) {
+$factory->define(Multi\Models\User::class, function (Faker\Generator $faker) {
 	return [
 		'client_id' => $faker->randomNumber(8),
 		'tenant_id' => $faker->randomNumber(8),

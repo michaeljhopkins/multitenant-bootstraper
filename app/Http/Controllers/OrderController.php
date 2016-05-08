@@ -1,10 +1,10 @@
-<?php namespace Multistarter\Http\Controllers;
+<?php namespace Multi\Http\Controllers;
 
-use Multistarter\Http\Requests;
-use Multistarter\Http\Requests\CreateOrderRequest;
-use Multistarter\Http\Requests\UpdateOrderRequest;
-use Multistarter\Services\OrderService;
-use Multistarter\Http\Controllers\Controller as BaseController;
+use Multi\Http\Requests;
+use Multi\Http\Requests\CreateOrderRequest;
+use Multi\Http\Requests\UpdateOrderRequest;
+use Multi\Services\OrderService;
+use Multi\Http\Controllers\Controller as BaseController;
 use Flash;
 
 class OrderController extends BaseController

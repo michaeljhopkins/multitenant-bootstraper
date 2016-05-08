@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Repositories;
+<?php namespace Multi\Repositories;
 
-use Multistarter\Models\Product;
-use Multistarter\Repositories\Repository;
+use Multi\Models\Product;
+use Multi\Repositories\Repository;
 
 class ProductRepository extends Repository
 {

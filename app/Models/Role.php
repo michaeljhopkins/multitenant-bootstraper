@@ -1,22 +1,22 @@
-<?php namespace Multistarter\Models;
+<?php namespace Multi\Models;
 
 /**
- * Multistarter\Models\Role
+ * Multi\Models\Role
  *
  * @property integer $id
  * @property integer $client_id
  * @property integer $tenant_id
  * @property string $name
  * @property string $slug
- * @property-read \Multistarter\Models\Client $client
- * @property-read \Multistarter\Models\Tenant $tenant
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\Permission[] $permissions
- * @property-read \Illuminate\Database\Eloquent\Collection|\Multistarter\Models\User[] $users
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereClientId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereTenantId($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereSlug($value)
+ * @property-read \Multi\Models\Client $client
+ * @property-read \Multi\Models\Tenant $tenant
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\Permission[] $permissions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Multi\Models\User[] $users
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereClientId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereTenantId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereSlug($value)
  * @mixin \Eloquent
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -24,15 +24,15 @@
  * @property integer $updated_by
  * @property string $deleted_at
  * @property integer $deleted_by
- * @property-read \Multistarter\Models\User $createdBy
- * @property-read \Multistarter\Models\User $updatedBy
- * @property-read \Multistarter\Models\User $deletedBy
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereUpdatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereCreatedBy($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereUpdatedBy($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereDeletedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\Multistarter\Models\Role whereDeletedBy($value)
+ * @property-read \Multi\Models\User $createdBy
+ * @property-read \Multi\Models\User $updatedBy
+ * @property-read \Multi\Models\User $deletedBy
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereCreatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Multi\Models\Role whereDeletedBy($value)
  */
 class Role extends BaseModel
 {

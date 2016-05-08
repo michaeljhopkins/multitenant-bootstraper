@@ -1,6 +1,6 @@
-<?php namespace Multistarter\Services;
+<?php namespace Multi\Services;
 
-use Multistarter\Repositories\PermissionRepository;
+use Multi\Repositories\PermissionRepository;
 
 class PermissionService
 {

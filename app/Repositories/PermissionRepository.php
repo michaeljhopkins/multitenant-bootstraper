@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Repositories;
+<?php namespace Multi\Repositories;
 
-use Multistarter\Models\Permission;
-use Multistarter\Repositories\Repository;
+use Multi\Models\Permission;
+use Multi\Repositories\Repository;
 
 class PermissionRepository extends Repository
 {

@@ -1,10 +1,10 @@
-<?php namespace Multistarter\Http\Controllers;
+<?php namespace Multi\Http\Controllers;
 
-use Multistarter\Http\Requests;
-use Multistarter\Http\Requests\CreateProductRequest;
-use Multistarter\Http\Requests\UpdateProductRequest;
-use Multistarter\Services\ProductService;
-use Multistarter\Http\Controllers\Controller as BaseController;
+use Multi\Http\Requests;
+use Multi\Http\Requests\CreateProductRequest;
+use Multi\Http\Requests\UpdateProductRequest;
+use Multi\Services\ProductService;
+use Multi\Http\Controllers\Controller as BaseController;
 use Flash;
 
 class ProductController extends BaseController

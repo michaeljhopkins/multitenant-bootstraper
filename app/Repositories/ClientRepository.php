@@ -1,7 +1,7 @@
-<?php namespace Multistarter\Repositories;
+<?php namespace Multi\Repositories;
 
-use Multistarter\Models\Client;
-use Multistarter\Repositories\Repository;
+use Multi\Models\Client;
+use Multi\Repositories\Repository;
 
 class ClientRepository extends Repository
 {

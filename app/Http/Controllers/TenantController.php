@@ -1,10 +1,10 @@
-<?php namespace Multistarter\Http\Controllers;
+<?php namespace Multi\Http\Controllers;
 
-use Multistarter\Http\Requests;
-use Multistarter\Http\Requests\CreateTenantRequest;
-use Multistarter\Http\Requests\UpdateTenantRequest;
-use Multistarter\Services\TenantService;
-use Multistarter\Http\Controllers\Controller as BaseController;
+use Multi\Http\Requests;
+use Multi\Http\Requests\CreateTenantRequest;
+use Multi\Http\Requests\UpdateTenantRequest;
+use Multi\Services\TenantService;
+use Multi\Http\Controllers\Controller as BaseController;
 use Flash;
 
 class TenantController extends BaseController

@@ -4,9 +4,9 @@
     @include('layouts.partials.head')
 </head>
 <body data-spy="scroll">
-<div class="container-fluid">
-    @include('layouts.partials.topNavNoAuth')
-    <div class="row-fluid">
+<div class="container">
+    @include('layouts.partials.topNav')
+    <div class="row">
         <div class="span10 offset1">
             <div class="span9">
                 @include('layouts.partials.header')

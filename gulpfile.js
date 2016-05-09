@@ -14,7 +14,6 @@ elixir(function(mix) {
     mix.styles([
         'docs.css',
         'bootstrap.css',
-        'bootstrap-responsive.css',
         'prettify.css',
         'offcanvas.css'
     ]);

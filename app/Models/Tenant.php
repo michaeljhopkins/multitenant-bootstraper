@@ -1,6 +1,5 @@
 <?php namespace Multi\Models;
 
-use Cache;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Multi\Packages\Acl\Models\Permission;
 use Multi\Packages\Acl\Models\Role;
@@ -77,59 +76,5 @@ class Tenant extends BaseModel
     
     public function users() {
 		return $this->hasMany(User::class);
-	}
-
-	public static function getCurrent($reload = false)
-	{
-		// Static return
-		$staticDomain = new self([
-			'domain' => 'http://multitenant-bootstraper.dev',
-			'client_id' => 1,
-			'created_by' => null,
-			'created_at' => '2016-02-15 19:19:19',
-			'updated_by' => null,
-			'updated_at' => '2016-02-15 19:19:19',
-			'deleted_by' => null,
-			'deleted_at' => null
-		]);
-
-		// Static Client
-		$staticClient = new Client([
-			'name' => 'Static Client #1',
-			'created_by' => null,
-			'created_at' => '2016-02-15 19:19:19',
-			'updated_by' => null,
-			'updated_at' => '2016-02-15 19:19:19',
-			'deleted_at' => null
-		]);
-
-		// Set ID for Static Client
-		$staticClient->id = 1;
-		$staticDomain->id = 1;
-
-		$staticDomain->setRelation('client', $staticClient);
-		
-		return $staticDomain;
-		
-		$currentDomain = \Request::getHost();
-
-		$cacheKey = 'tenant_' . $currentDomain;
-
-		if ($reload) {
-			Cache::forget($cacheKey);
-		}
-
-		$domainObject = \Cache::remember($cacheKey, 60 * 24, function () use ($currentDomain) {
-			if (\Schema::hasTable('tenants')) {
-				return self::whereUrl($currentDomain)->first();
-			}
-			return;
-		});
-
-		if (!$domainObject && !\App::runningInConsole()) {
-			throw new \Exception('No domain is configured for the name \'' . $currentDomain . '\'');
-		}
-
-		return $domainObject;
 	}
 }

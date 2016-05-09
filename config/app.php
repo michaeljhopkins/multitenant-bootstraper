@@ -174,6 +174,7 @@ return [
         Multi\Providers\EventServiceProvider::class,
         Multi\Providers\PermissionServiceProvider::class,
         Multi\Providers\RouteServiceProvider::class,
+        Multi\Providers\MultiTenantSerivceProvider::class,
 
 
     ],

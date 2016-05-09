@@ -29,15 +29,6 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Multi\Http\Middleware\VerifyCsrfToken::class,
-            \Multi\Http\Middleware\TenantScoping::class,
-        ],
-        'customer' => [
-            \Multi\Http\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \Multi\Http\Middleware\VerifyCsrfToken::class,
-            \Multi\Http\Middleware\TenantScoping::class,
         ],
 
         'api' => [

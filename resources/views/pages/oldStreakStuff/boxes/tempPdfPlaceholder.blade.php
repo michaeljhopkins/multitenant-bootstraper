@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('main')
     @foreach($threadArray as $boxKey => $threads)
         {{--{{ $boxKey = str_replace('agxzfm1haWxmb29nYWVyNgsSDE9yZ2FuaXphdGlvbiIQcmVjLWlsbG','',$boxKey) }}

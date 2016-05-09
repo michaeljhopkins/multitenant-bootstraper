@@ -13,11 +13,13 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('clients', 'ClientController');
+    Route::resource('orders', 'OrderController');
+    Route::resource('products', 'ProductController');
+    Route::resource('tenants', 'TenantController');
+    Route::resource('users', 'UserController');
+});
+Route::auth();
 
-Route::resource('clients', 'ClientController');
-Route::resource('orders', 'OrderController');
-Route::resource('permissions', 'PermissionController');
-Route::resource('products', 'ProductController');
-Route::resource('roles', 'RoleController');
-Route::resource('tenants', 'TenantController');
-Route::resource('users', 'UserController');
+Route::get('/home', 'HomeController@index');

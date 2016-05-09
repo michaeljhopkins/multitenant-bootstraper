@@ -2,16 +2,33 @@
 
 namespace Multi\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use Multi\Http\Requests;
-use Multi\Models\Client;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $clients = Client::with(['tenants.products'])->get();
-        return \Response::make($clients->toArray());
+        if(\Auth::check()){
+            return view('pages.users.show',['user' => \Auth::user()]);
+        }
+        else{
+            return view('auth.login');
+        }
     }
 }
